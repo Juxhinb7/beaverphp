@@ -28,6 +28,6 @@
         }
     },
     "post-create-project-cmd": [
-        "cp -r boilerplate/* ./"
+        "cp -r boilerplate/* ../../"
     ]
 }
