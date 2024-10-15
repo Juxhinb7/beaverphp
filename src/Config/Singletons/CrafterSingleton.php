@@ -27,6 +27,7 @@ final class CrafterSingleton
                 if (explode(":", $args[1])[0] === "make"){
                     if (explode(":", $args[1])[1] === "controller")
                     {
+                        mkdir("controllers");
                         file_put_contents("controllers/" . $args[2], "Hello from controller");
                     }
                 }
