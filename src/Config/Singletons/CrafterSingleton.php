@@ -20,17 +20,7 @@ final class CrafterSingleton
 
     public function generateFile($fileName = 'crafter'): void
     {
-        file_put_contents($fileName, "<?php\n\n" . '
-        class Crafter{
-            public function execute($args)
-            {
-                if (explode(":", $args[1])[0] === "make"){
-                    echo "made";
-                }
-            }
-        }
-        
-        (new Crafter())->execute($argv);');
+        file_put_contents($fileName, "<?php\n\n" . 'class Crafter{public function execute($args){if (explode(":", $args[1])[0] === "make"){echo "made";}}}(new Crafter())->execute($argv);');
     }
 
 }
