@@ -1,0 +1,18 @@
+{
+    "name": "juxhinb7/beaver-php",
+    "description": "A flexible PHP Web Framework.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "juxhinb7"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Beaver\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
