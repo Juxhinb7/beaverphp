@@ -14,19 +14,7 @@
         }
     },
     "minimum-stability": "dev",
-    "require": {
-        "composer/installers": "^2.3",
-        "oomphinc/composer-installers-extender": "^2.0"
-    },
-    "extra": {
-        "installer-paths": {
-            "./": ["type:library"]
-        }
-    },
+    "require": {},
     "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "oomphinc/composer-installers-extender": true
-        }
     }
 }
