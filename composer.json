@@ -15,7 +15,8 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "composer/installers": "^2.3"
+        "composer/installers": "^2.3",
+        "oomphinc/composer-installers-extender": "^2.0"
     },
     "extra": {
         "installer-paths": {
@@ -24,10 +25,8 @@
     },
     "config": {
         "allow-plugins": {
-            "composer/installers": true
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true
         }
-    },
-    "post-create-project-cmd": [
-        "cp -r boilerplate/* ../../"
-    ]
+    }
 }
