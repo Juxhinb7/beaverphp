@@ -26,24 +26,13 @@ class Crafter{
     public function execute($args)
     {
         if (explode(":", $args[1])[0] === "make"){
-
-            $obj = explode(":", $args[1])[1];
-
-            switch($obj)
+            if (explode(":", $args[1])[1] === "controller")
             {
-                case "controller":
-                    (function() use($args){
-                        if (!is_dir("controllers")) {
-                            mkdir("controllers");
-                        }    
-                        file_put_contents("controllers/" . $args[2], sprintf("
-class %s
-{
-    
-}
-                        ", $args[2]));
-                    })();
-                    break;
+                if (!is_dir("controllers")) {
+                    mkdir("controllers");
+                }
+                
+                file_put_contents("controllers/" . $args[2], "Hello from controller");
             }
         }
     }
