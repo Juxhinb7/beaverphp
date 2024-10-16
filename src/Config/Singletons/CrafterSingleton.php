@@ -21,19 +21,34 @@ final class CrafterSingleton
     public function generateFile($fileName = 'crafter'): void
     {
         file_put_contents($fileName, "<?php\n" . '
-    class Crafter{
-        public function execute($args)
-        {
-            if (explode(":", $args[1])[0] === "make"){
-                if (explode(":", $args[1])[1] === "controller")
-                {
-                    mkdir("controllers");
-                    file_put_contents("controllers/" . $args[2], "Hello from controller");
-                }
+
+class Crafter{
+    public function execute($args)
+    {
+        if (explode(":", $args[1])[0] === "make"){
+
+            $obj = explode(":", $args[1])[1];
+
+            switch($obj)
+            {
+                case "controller":
+                    (function() use($args){
+                        if (!is_dir("controllers")) {
+                            mkdir("controllers");
+                        }    
+                        file_put_contents("controllers/" . $args[2], sprintf("
+class %s
+{
+    
+}
+                        ", $args[2]));
+                    })();
+                    break;
             }
         }
     }
-    (new Crafter())->execute($argv);');
+}
+(new Crafter())->execute($argv);');
     }
 
 }
