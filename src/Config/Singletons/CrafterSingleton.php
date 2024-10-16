@@ -31,12 +31,13 @@ class Crafter{
 
             match($fileType) {
                 "controller" => (function() use($args){
-                    if (!is_dir("controllers")) {
-                        mkdir("controllers");
+                    if (!is_dir("Application/Controllers")) {
+                        mkdir("Application/Controllers", 0777, true);
                     }
+                    
 
                     if ($args[2]) {
-                        file_put_contents("controllers/" . $args[2] . ".php", sprintf("<?php\n\nclass %s \n{\n\n}", $args[2]));
+                        file_put_contents("Application/Controllers/" . $args[2] . ".php", sprintf("<?php\n\n namespace Application\Controllers;\n\nclass %s \n{\n\n}", $args[2]));
                     }
                 })(),
                 default => (function(){
