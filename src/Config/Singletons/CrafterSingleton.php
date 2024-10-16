@@ -20,7 +20,7 @@ final class CrafterSingleton
 
     public function generateFile($fileName = 'crafter'): void
     {
-        file_put_contents($fileName, '<?php
+        file_put_contents($fileName . '.php', '<?php
 
 class Crafter{
     public function execute($args)
@@ -36,14 +36,7 @@ class Crafter{
                     }
 
                     if ($args[2]) {
-                        file_put_contents("controllers/" . $args[2] . ".php", sprintf("
-<?php
-
-class %s
-{
-
-}
-                        ", $args[2]));
+                        file_put_contents("controllers/" . $args[2] . ".php", sprintf("<?php\n\nclass %s \n{\n}", $args[2]));
                     }
                 })(),
                 default => (function(){
