@@ -27,14 +27,6 @@ class Crafter{
     public function execute($args)
     {
         if (explode(":", $args[1])[0] === "make"){
-            if (explode(":", $args[1])[1] === "controller")
-            {
-                if (!is_dir("controllers")) {
-                    mkdir("controllers");
-                }
-                
-                file_put_contents("controllers/" . $args[2], "Hello from controller");
-            }
 
             $fileType = explode(":", $args[1])[1];
 
@@ -59,6 +51,8 @@ class %s
                     echo "Cannot process file type." . PHP_EOL;
                 })()
             };
+        } else {
+            echo "No arguments were given." . PHP_EOL; 
         }
     }
 }
