@@ -36,7 +36,7 @@ class Crafter{
                     }
 
                     if ($args[2]) {
-                        file_put_contents("controllers/" . $args[2] . ".php", sprintf("<?php\n\nclass %s \n{\n}", $args[2]));
+                        file_put_contents("controllers/" . $args[2] . ".php", sprintf("<?php\n\nclass %s \n{\n\n}", $args[2]));
                     }
                 })(),
                 default => (function(){
