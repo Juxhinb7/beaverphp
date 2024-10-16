@@ -37,7 +37,8 @@ class Crafter{
                     
 
                     if ($args[2]) {
-                        file_put_contents("Application/Controllers/" . $args[2] . ".php", sprintf("<?php\n\n namespace Application\Controllers;\n\nclass %s \n{\n\n}", $args[2]));
+                        $file = fopen("Application/Controllers/" . $args[2] . ".php", "w");
+                        fwrite($file, sprintf("<?php\n\n namespace Application\Controllers;\n\nclass %s \n{\n\n}", $args[2]));
                     }
                 })(),
                 default => (function(){
@@ -48,6 +49,6 @@ class Crafter{
     }
 }
 (new Crafter())->execute($argv);');
-    }
+    }   
 
 }
