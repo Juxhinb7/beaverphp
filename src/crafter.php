@@ -1,27 +1,5 @@
 <?php
 
-namespace Beaver\Config\Singletons;
-
-final class CrafterSingleton
-{
-    private static $instance;
-    private function __construct()
-    {
-
-    }
-
-    public static function makeSingle(): CrafterSingleton
-    {
-        if (!isset(CrafterSingleton::$instance)) {
-            CrafterSingleton::$instance =  new CrafterSingleton();
-        }
-        return CrafterSingleton::$instance;
-    }
-
-    public function generateFile($fileName = 'crafter'): void
-    {
-        file_put_contents($fileName, '<?php
-
 class Crafter{
     public function execute($args)
     {
@@ -60,7 +38,4 @@ class Crafter{
         
     }
 }
-(new Crafter())->execute($argv);');
-    }
-
-}
+(new Crafter())->execute($argv);
