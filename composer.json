@@ -1,0 +1,14 @@
+{
+    "name": "beaverdom/beaver-php",
+    "description": "A flexible PHP Web framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Beaver\\": "lib/",
+            "App\\": "app/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {}
+}
