@@ -1,6 +1,6 @@
 <?php
 
-namespace Beaver\Exceptions;
+namespace Beaver\Exception\Routing;
 
 class RouteNotFoundException extends \Exception
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Beaver\Utilities;
+namespace Beaver\Utility;
 use Smarty\Smarty;
 
 final class View extends Smarty

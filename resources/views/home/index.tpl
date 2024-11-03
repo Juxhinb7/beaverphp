@@ -3,8 +3,8 @@
     <div class="container">
             
             <div style="display:flex; flex-direction: row; justify-content: space-between; column-gap: 70px;">
-                <div>{html_image file="beaver.png" width="170" height="165"}</div>
-               <div>{html_image file="smartyLogo.png" width="170" height="165"}</div>
+                <div>{html_image file="/assets/beaver.png" width="170" height="165"}</div>
+               <div>{html_image file="/assets/smartyLogo.png" width="170" height="165"}</div>
             </div>
             <h1 style="padding-top: 3vh;">{$webFramework} + {$templateEngine}</h1>
 
